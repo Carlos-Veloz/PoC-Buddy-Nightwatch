@@ -2,6 +2,7 @@
   "src_folders" : ["tests"],
   "output_folder" : "reports",
   "page_objects_path" : "pages",
+  "globals_path" : "globalsModule.js",
 
   "webdriver" : {
     "start_process" : true,
@@ -11,7 +12,7 @@
 
   "test_settings" : {
     "default" : {
-      "launch_url" : "",
+      "launch_url" : "http://todomvc.com/examples/angularjs/#/",
       "silent": true,
       "screenshots" : {
         "enabled" : true,

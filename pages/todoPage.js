@@ -18,7 +18,9 @@ module.exports =  {
             return this.assert.containsText(element, items)
         }
     }],
-    url: 'http://todomvc.com/examples/angularjs/#/',
+    url(){
+        return this.api.launchUrl;
+    },
     elements: {
         toDoTextField: {
             selector: '.new-todo'
