@@ -21,16 +21,16 @@ module.exports = {
       galen.addTask(inputData.task).validates('@counter', inputData.oneItem);
     },
 
-    'After I add a task and toggle it there should not be items left': function () {
-      galen.addTask(inputData.task).toggleFirstElement()
-      .validates('@counter', inputData.zeroItems)
-      .validates('@completed', inputData.clearCompleted);
-    },
-
     'Remove completed tasks': function () {
       galen.addTask(inputData.task).addTask(inputData.task).toggleFirstElement()
       .validates('@counter', inputData.oneItem)
       .click('@completed').validates('@counter', inputData.oneItem);
+    },
+
+    'After I add a task and toggle it there should not be items left': function () {
+      galen.addTask(inputData.task).toggleFirstElement()
+      .validates('@counter', inputData.zeroItems)
+      .validates('@completed', inputData.clearCompleted);
     }
     
 };
