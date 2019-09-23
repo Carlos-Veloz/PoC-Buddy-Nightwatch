@@ -1,26 +1,36 @@
+const dotenv = require('dotenv');
+dotenv.config({ path: './.env' });
+
 nightwatch_config = {
-    src_folders : [ "tests" ],
+    src_folders: ["tests"],
+    output_folder : "reports",
     page_objects_path : "pages",
+    globals_path : "../globalsModule.js",
     
     selenium : {
-      "start_process" : false,
-      "host" : "hub-cloud.browserstack.com",
-      "port" : 80
+      start_process: false,
+      host: "hub-cloud.browserstack.com",
+      port: 80
     },
   
     test_settings: {
       default: {
         launch_url: "http://todomvc.com/examples/angularjs/#/",
         desiredCapabilities: {
-          'build': 'nightwatch-browserstack',
-          'browserstack.user': process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
-          'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
-          'browserstack.debug': true,
-          'browser': 'chrome'
+          build: "nightwatch-browserstack",
+          "browserstack.user":
+            process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
+          "browserstack.key":
+            process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
+          "browserstack.debug": true,
+          browser: "chrome"
+        },
+        globals: {
+          "waitForConditionTimeout": 15000
         }
       }
     }
-  };
+};
   
   // Code to copy seleniumhost/port into test settings
   for(var i in nightwatch_config.test_settings){

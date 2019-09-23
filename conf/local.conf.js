@@ -1,5 +1,3 @@
-var browserstack = require("browserstack-local");
-
 nightwatch_config = {
   src_folders: ["tests"],
   output_folder : "reports",
@@ -14,22 +12,6 @@ nightwatch_config = {
 
   test_settings: {
     default: {
-      launch_url: "http://todomvc.com/examples/angularjs/#/",
-      desiredCapabilities: {
-        build: "nightwatch-browserstack",
-        "browserstack.user":
-          process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
-        "browserstack.key":
-          process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
-        "browserstack.debug": true,
-        "browserstack.local": true,
-        browser: "internet explorer"
-      },
-      globals: {
-        "waitForConditionTimeout": 15000
-      }
-    },
-    chrome: {
       launch_url: "http://todomvc.com/examples/angularjs/#/",
       desiredCapabilities: {
         build: "nightwatch-browserstack",

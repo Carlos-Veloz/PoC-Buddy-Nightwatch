@@ -12,7 +12,8 @@ module.exports =  {
                 .submitTask();
         },
         toggleFirstElement(){
-            return this.click('@firstElement');
+            return this.waitForElementVisible('@list')
+            .click('@firstElementToggle');
         },
         validates(element, items){
             return this.assert.containsText(element, items)
@@ -34,7 +35,7 @@ module.exports =  {
         list: {
             selector: '.todo-list li'
         },
-        firstElement: {
+        firstElementToggle: {
             selector: '.todo-list li:first-child .toggle'
         },
         completed: {

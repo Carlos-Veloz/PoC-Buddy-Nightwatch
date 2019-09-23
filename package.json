@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run single && npm run local && npm run parallel",
+    "test": "nightwatch tests/overview.spec.js",
     "single": "./node_modules/.bin/nightwatch -c conf/single.conf.js",
     "local": "node scripts/local.runner.js -c conf/local.conf.js",
-    "parallel": "./node_modules/.bin/nightwatch -c conf/parallel.conf.js -e chrome,firefox,safari,ie"
+    "parallel": "./node_modules/.bin/nightwatch -c conf/parallel.conf.js -e chrome,firefox,safari,edge"
   },
   "keywords": [],
   "author": "",

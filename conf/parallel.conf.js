@@ -1,6 +1,8 @@
 nightwatch_config = {
     src_folders: ["tests"],
+    output_folder : "reports",
     page_objects_path : "pages",
+    globals_path : "../globalsModule.js",
     
     selenium: {
       start_process: false,
@@ -32,11 +34,6 @@ nightwatch_config = {
       safari: {
         desiredCapabilities: {
           browser: "safari"
-        }
-      },
-      ie: {
-        desiredCapabilities: {
-          browser: "internet explorer"
         }
       },
       edge: {
