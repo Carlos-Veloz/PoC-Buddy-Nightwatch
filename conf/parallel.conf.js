@@ -23,26 +23,34 @@ nightwatch_config = {
       default: {launch_url: "http://todomvc.com/examples/angularjs/#/"},
       chrome: {
         desiredCapabilities: {
-          browser: "chrome"
-        }
-      },
-      firefox: {
-        desiredCapabilities: {
-          browser: "firefox"
-        }
-      },
-      safari: {
-        desiredCapabilities: {
-          browser: "safari"
-        }
+          os: 'Windows',
+          os_version: '10',
+          browser: 'chrome',
+        },
       },
       edge: {
-        desiredCapabilities: {
-          browser: "MicrosoftEdge"
-        }
-      }
+      desiredCapabilities: {
+        os: 'Windows',
+        os_version: '10',
+        browser: 'edge',
+      },
+    },
+    safari: {
+      desiredCapabilities: {
+        os: 'OS X',
+        os_version: 'Sierra',
+        browser: 'safari',
+      },
+    },
+    firefox: {
+      desiredCapabilities: {
+        os: 'Windows',
+        os_version: '10',
+        browser: 'firefox',
+      },
     }
-  };
+  }
+};
   
   // Code to support common capabilites
   for (var i in nightwatch_config.test_settings) {

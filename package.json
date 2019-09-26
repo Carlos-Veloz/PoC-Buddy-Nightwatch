@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nightwatch tests/overview.spec.js",
-    "single": "./node_modules/.bin/nightwatch -c conf/single.conf.js",
-    "local": "node scripts/local.runner.js -c conf/local.conf.js",
+    "local": "node scripts/local.runner.js -c conf/local.conf.js -e safari",
     "parallel": "./node_modules/.bin/nightwatch -c conf/parallel.conf.js -e chrome,firefox,safari,edge"
   },
   "keywords": [],

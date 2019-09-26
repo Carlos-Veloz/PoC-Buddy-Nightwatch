@@ -10,38 +10,38 @@ nightwatch_config = {
     port: 80
   },
 
+  common_capabilities: {
+    build: "nightwatch-browserstack",
+    "browserstack.user":
+      process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
+    "browserstack.key":
+      process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
+    "browserstack.debug": true
+  },
+
   test_settings: {
-    default: {
-      launch_url: "http://todomvc.com/examples/angularjs/#/",
-      desiredCapabilities: {
-        build: "nightwatch-browserstack",
-        "browserstack.user":
-          process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
-        "browserstack.key":
-          process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
-        "browserstack.debug": true,
-        "browserstack.local": true,
-        browser: "chrome"
+    default: {launch_url: "http://todomvc.com/examples/angularjs/#/"},
+    
+    edge: {
+    desiredCapabilities: {
+      os: 'Windows',
+      os_version: '10',
+      browser: 'edge',
       },
-      globals: {
-        "waitForConditionTimeout": 15000
-      }
+    },
+    safari: {
+      desiredCapabilities: {
+        os: 'OS X',
+        os_version: 'Mojave',
+        browser: 'safari',
+      },
     },
     firefox: {
-      launch_url: "http://todomvc.com/examples/angularjs/#/",
       desiredCapabilities: {
-        build: "nightwatch-browserstack",
-        "browserstack.user":
-          process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
-        "browserstack.key":
-          process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
-        "browserstack.debug": true,
-        "browserstack.local": true,
-        browser: "firefox"
+        os: 'Windows',
+        os_version: '10',
+        browser: 'firefox',
       },
-      globals: {
-        "waitForConditionTimeout": 15000
-      }
     }
   }
 };
@@ -51,6 +51,12 @@ for (var i in nightwatch_config.test_settings) {
   var config = nightwatch_config.test_settings[i];
   config["selenium_host"] = nightwatch_config.selenium.host;
   config["selenium_port"] = nightwatch_config.selenium.port;
+  config["desiredCapabilities"] = config["desiredCapabilities"] || {};
+  for (var j in nightwatch_config.common_capabilities) {
+    config["desiredCapabilities"][j] =
+      config["desiredCapabilities"][j] ||
+      nightwatch_config.common_capabilities[j];
+  }
 }
 
 module.exports = nightwatch_config;

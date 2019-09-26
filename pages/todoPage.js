@@ -1,15 +1,10 @@
 module.exports =  {
     commands: [{
-        typeTask(taskString){
-            return this.waitForElementVisible('@toDoTextField')
-                .setValue('@toDoTextField', taskString);
-        },
-        submitTask(){
-            return this.submitForm('@toDoForm');
-        },
         addTask(taskString){
-            return this.typeTask(taskString)
-                .submitTask();
+            return this.waitForElementVisible('@toDoTextField')
+                .setValue('@toDoTextField', taskString)
+                .sendKeys('@toDoTextField',this.api.Keys.ENTER)
+                .waitForElementVisible('@counter');
         },
         toggleFirstElement(){
             return this.waitForElementVisible('@list')
@@ -43,9 +38,6 @@ module.exports =  {
         },
         counter: {
             selector: '.todo-count'
-        },
-        active: {
-            selector: 'selected: status == \'active\''
         }
     }
 };
