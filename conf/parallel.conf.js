@@ -38,7 +38,7 @@ nightwatch_config = {
     safari: {
       desiredCapabilities: {
         os: 'OS X',
-        os_version: 'Sierra',
+        os_version: 'Mojave',
         browser: 'safari',
       },
     },

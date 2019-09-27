@@ -18,7 +18,8 @@ module.exports = {
     },
 
     'Add a new task to the list': function (){
-      todo.addTask(inputData.task).validates('@counter', inputData.oneItem);
+      todo.addTask(inputData.task)
+      .validates('@counter', inputData.oneItem);
     },
 
     'Remove completed tasks': function () {

@@ -1,7 +1,7 @@
 function InputData() {
     // Data
-    this.oneItem = '1 item left';
-    this.zeroItems = '0 items left';
+    this.oneItem = '1';
+    this.zeroItems = '0';
     this.clearCompleted = 'Clear completed';
     this.task = 'New To Do';
 }

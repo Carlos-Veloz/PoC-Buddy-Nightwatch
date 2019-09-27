@@ -13,7 +13,7 @@ module.exports =  {
         validates(element, items){
             //return this.assert.containsText(element, items)
             return this.getText(element, function(result){
-                this.assert.equal(result.value.trim(), items);
+                this.assert.equal(result.value, items);
             });
         }
     }],
@@ -40,7 +40,7 @@ module.exports =  {
             selector: '.clear-completed'
         },
         counter: {
-            selector: '.todo-count'
+            selector: '.todo-count .ng-binding'
         }
     }
 };
