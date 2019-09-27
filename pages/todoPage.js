@@ -8,10 +8,13 @@ module.exports =  {
         },
         toggleFirstElement(){
             return this.waitForElementVisible('@list')
-            .click('@firstElementToggle');
+                .click('@firstElementToggle');
         },
         validates(element, items){
-            return this.assert.containsText(element, items)
+            //return this.assert.containsText(element, items)
+            return this.getText(element, function(result){
+                this.assert.equal(result.value.trim(), items);
+            });
         }
     }],
     url(){

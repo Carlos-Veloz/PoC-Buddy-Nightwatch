@@ -23,14 +23,14 @@ module.exports = {
 
     'Remove completed tasks': function () {
       todo.addTask(inputData.task).addTask(inputData.task).toggleFirstElement()
-      .validates('@counter', inputData.oneItem)
-      .click('@completed').validates('@counter', inputData.oneItem);
+      .validates('@counter', inputData.oneItem);
+      todo.click('@completed').validates('@counter', inputData.oneItem);
     },
 
     'After I add a task and toggle it there should not be items left': function () {
       todo.addTask(inputData.task).toggleFirstElement()
-      .validates('@counter', inputData.zeroItems)
-      .validates('@completed', inputData.clearCompleted);
+      .validates('@counter', inputData.zeroItems);
+      todo.validates('@completed', inputData.clearCompleted);
     }
     
 };

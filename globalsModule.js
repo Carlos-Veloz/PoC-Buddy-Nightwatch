@@ -1,9 +1,9 @@
 var options = {
     slack_message: function(results, options) { // function or message string
       return {
-        text: 'Test completed, passed ' + results.passed + ', failed ' + results.failed,
+        text: 'Test completed, Passed: ' + results.passed + ' ' + ':happypepe:' + '- Failed: ' + results.failed + ' ' + ':sadpepe:' ,
         username: 'Nightwatch',
-        icon_emoji: ':ghost:'
+        icon_emoji: ':doge:',
       } // Message payload or string
     },
     slack_webhook_url: 'https://hooks.slack.com/services/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',
