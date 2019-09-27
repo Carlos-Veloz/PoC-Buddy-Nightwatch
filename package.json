@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch tests/overview.spec.js",
+    "test": "nightwatch tests/overview.spec.js --reporter ./html-reporter.js",
     "local": "node scripts/local.runner.js -c conf/parallel.conf.js -e safari",
     "parallel": "./node_modules/.bin/nightwatch -c conf/parallel.conf.js -e chrome,firefox,safari,edge"
   },
@@ -22,5 +22,8 @@
     "dotenv": "^8.1.0",
     "nightwatch": "^1.1",
     "nightwatch-slack-reporter": "0.0.2"
+  },
+  "dependencies": {
+    "nightwatch-html-reporter": "^2.0.6"
   }
 }

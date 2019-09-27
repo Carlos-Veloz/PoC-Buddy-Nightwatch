@@ -1,5 +1,6 @@
 node_modules
-reports
+reports/**.xml
+reports/screenshots
 tests_output
 **.log
 package-lock.json
