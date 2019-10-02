@@ -1,29 +1,33 @@
 {
-  "name": "Template",
+  "name": "Buddy on boarding Nightwatch",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch tests/overview.spec.js --reporter ./html-reporter.js",
-    "local": "node scripts/local.runner.js -c conf/parallel.conf.js -e safari",
-    "parallel": "./node_modules/.bin/nightwatch -c conf/parallel.conf.js -e chrome,firefox,safari,edge"
+    "e2e:local": "nightwatch tests/overview.spec.js --reporter ./html-reporter.js",
+    "e2e:BS:safari": "node scripts/local.runner.js -c conf/parallel.conf.js -e safari",
+    "e2e:BS:parallel": "./node_modules/.bin/nightwatch -c conf/parallel.conf.js -e chrome,firefox,safari,edge"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["QA", "Automation", "Nightwatch", "Eslint", "BrowserStack", "Nightwatch-Slack"],
+  "author": "Carlos Veloz",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-plugin-add-module-exports": "^1.0.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "browserstack-local": "^1.4.2",
-    "chromedriver": "^76.0.0",
-    "dotenv": "^8.1.0",
-    "nightwatch": "^1.1",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-plugin-add-module-exports": "1.0.2",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-es2015": "6.24.1",
+    "browserstack-local": "1.4.2",
+    "chromedriver": "76.0.0",
+    "dotenv": "8.1.0",
+    "eslint": "^6.5.1",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "nightwatch": "1.1",
+    "nightwatch-html-reporter": "2.0.6",
     "nightwatch-slack-reporter": "0.0.2"
-  },
-  "dependencies": {
-    "nightwatch-html-reporter": "^2.0.6"
   }
 }
