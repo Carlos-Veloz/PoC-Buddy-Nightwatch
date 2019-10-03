@@ -11,7 +11,12 @@ This project was created as a pilot for the buddy on boarding program related to
 You need to have the following tools installed on your computer.
 Node.js v12.10.0 or higher, npm v6.11.3 or higher. To install both tools you can download them from the [Node.js website](https://nodejs.org/en/)
 ### Instalation
-Clone this repository in your local machine. Install packaged dependencies by running
+Clone this repository into your local machine
+```
+git@github.com:Carlos-Veloz/PoC-Buddy-Nightwatch.git
+cd PoC-Buddy-Nightwatch
+```
+Install dependencies by running
 ```
 npm install
 ```
@@ -31,3 +36,9 @@ npm run e2e:BS:parllell
 ```
 ## Report on Slack
 In order to see the summary of your test execution you need to be added to the Slack channel *poc_buddy_nightwatch* or to check more information about how to set up Slack webhook notification please refer to this [tutorial](https://kb.itglue.com/hc/en-us/articles/228469048-Setting-up-Slack-webhook-notifications)
+## References
+For more information please refer to:
+* [Nightwatch](https://nightwatchjs.org/api)
+* [BrowserStack](https://www.browserstack.com/)
+* [Jenkins](https://jenkins.io/)
+* [ESLint](https://eslint.org/)
